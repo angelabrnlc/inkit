@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INKit</title>
+    <link
+      rel="stylesheet"
+      href="../public/stylesheets/style.css"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a id="logo" href="/">
+          <img src="../public/images/inkIt.png" alt="logo" />
+        </a>
+        <div id="menuN">
+          <a href="/estilos">ESTILOS</a>
+          <a href="/tatuadores">TATUADORES</a>
+          <a href="/ubicaciones">UBICACIONES</a>
+        </div>
+        <div>
+          <a href="/nosotros">NOSOTROS</a>
+        </div>
+        <% if(session.user_name){%>
+        <div>
+          <a href="/personalA">ÁREA PERSONAL</a>
+        </div>
+        <% } else {%>
+        <div>
+          <a href="#login">ENTRA</a>
+        </div>
+        <% } %>
+      </nav>
+    </header>
+    <section id="intro">
+      <article id="imgIntro">
+        <img src="../public/images/collage2.png" alt="collage" />
+      </article>
+
+      <article id="textIntro">
+        <h1>
+          NUNC<span class="editor">A</span> FUE T<span class="editor">A</span>N
+          F<span class="editor">Á</span>CIL ENC<span class="editor">O</span
+          >NTR<span class="editor">A</span>R TU PR<span class="editor">O</span
+          >PIO ESTIL<span class="editor">O</span>
+        </h1>
+      </article>
+    </section>
+    <section id="styles">
+      <h2 class="editor">ESTILOS</h2>
+      <article>
+        <div class="stylesCard">
+          <img
+            src="../public/images/pexels-yogendra-singh-4117793.jpg"
+            alt="tatuador"
+          />
+          <a href="/estilos">
+            <div class="noBorder">
+              <h3>Geométrico</h3>
+              <img
+                src="../public/images/flecha1.svg"
+                alt="flecha"
+                class="flecha"
+              />
+            </div>
+          </a>
+        </div>
+        <div class="stylesCard">
+          <img
+            src="../public/images/pexels-rachel-claire-5490296.jpg"
+            alt="tatuador"
+          />
+          <a href="/estilos">
+            <div class="noBorder">
+              <h3>Black Work</h3>
+              <img
+                src="../public/images/flecha1.svg"
+                alt="flecha"
+                class="flecha"
+              />
+            </div>
+          </a>
+        </div>
+
+        <div class="stylesCard">
+          <img
+            src="../public/images/pexels-rachel-claire-4857741.jpg"
+            alt="tatuador"
+          />
+          <a href="/estilos">
+            <div class="noBorder">
+              <h3>Old School</h3>
+              <img
+                src="../public/images/flecha1.svg"
+                alt="flecha"
+                class="flecha"
+              /></div
+          ></a>
+        </div>
+      </article>
+    </section>
+    <section id="location">
+      <h2 class="editor">UBICACIONES</h2>
+      <article>
+        <div class="locationDiv">
+          <a href="/ubicaciones">
+            <h3>MADRID</h3>
+            <img src="../public/images/flecha1.svg" alt="flecha" class="flecha"
+          /></a>
+        </div>
+        <div class="locationDiv">
+          <a href="/ubicaciones">
+            <h3>SEVILLA</h3>
+            <img src="../public/images/flecha1.svg" alt="flecha" class="flecha"
+          /></a>
+        </div>
+        <div class="locationDiv">
+          <a href="/ubicaciones">
+            <h3>BARCELONA</h3>
+            <img src="../public/images/flecha1.svg" alt="flecha" class="flecha"
+          /></a>
+        </div>
+      </article>
+    </section>
+    <section></section>
+    <section></section>
+    <footer>
+      <div id="footer">
+        <div id="navF">
+          <div id="menu">
+            <a href="/estilos">ESTILOS</a>
+            <a href="/tatuadores">TATUADORES</a>
+            <a href="/ubicaciones">UBICACIONES</a>
+          </div>
+          <div>
+            <a href="/nosotros">NOSOTROS</a>
+          </div>
+          <% if(!session.user_name){%>
+          <div>
+            <a href="/register">REGÍSTRATE</a>
+          </div>
+          <% } else {%>
+          <div>
+            <a href="/personalA">ÁREA PERSONAL</a>
+          </div>
+          <div>
+            <a href="/logout">CERRAR SESIÓN</a>
+          </div>
+          <% }%>
+        </div>
+        <div id="login">
+          <form action="/login" method="post">
+            <input type="email" name="user_mail" placeholder="EMAIL" />
+            <input
+              type="password"
+              name="user_password"
+              placeholder="CONTRASEÑA"
+              id="password"
+            />
+            <input type="submit" value="ENTRA" />
+          </form>
+        </div>
+      </div>
+      <div id="imgF">
+        <img src="../public/images/2023.png" alt="©2023" />
+        <a href="/"> <img src="../public/images/inkIt.png" alt="logo" /></a>
+      </div>
+    </footer>
+  </body>
+</html>

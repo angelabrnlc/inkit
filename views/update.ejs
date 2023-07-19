@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="../public/stylesheets/style.css"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="../public/stylesheets/update.css">
+    <title>INKit · Dat0s</title>
+  </head>
+  <body id="updateD">
+    <h1>
+      M<span class="editor">O</span>DIFIC<span class="editor">A</span>
+    </h1>
+    <form id="updateF" action="/updateData" method="post">
+      <div id="firstdiv">
+        <h2 id="username"><%- user_name %></h2>
+      </div>
+      <div>
+        <input type="email" name="user_mail" placeholder="NUEVO EMAIL" />
+      </div>
+      <div id="tatuadores">
+        <div>
+          <input
+            type="text"
+            name="user_location"
+            placeholder="NUEVA UBICACIÓN"
+          />
+        </div>
+        <div>
+          <input type="text" name="user_ig" placeholder="NUEVO INSTAGRAM" />
+        </div>
+      </div>
+      <div>
+        <input
+          type="text"
+          name="user_style"
+          placeholder="NUEVO ESTILO PRINCIPAL"
+        />
+      </div>
+
+      <div id="subU">
+        <input type="submit" value="MODIFICAR" />
+      </div>
+    </form>
+
+    <footer>
+      <div id="navF">
+        <div id="menu">
+          <a href="/estilos">ESTILOS</a>
+          <a href="/tatuadores">TATUADORES</a>
+          <a href="/ubicaciones">UBICACIONES</a>
+        </div>
+        <div>
+          <a href="/nosotros">NOSOTROS</a>
+        </div>
+      </div>
+      <div id="imgF">
+        <img src="../public/images/2023.png" alt="©2023" />
+        <a href="/"> <img src="../public/images/inkIt.png" alt="logo" /></a>
+      </div>
+    </footer>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"
+  ></script>
+</html>

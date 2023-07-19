@@ -1,0 +1,48 @@
+#updateD h1 {
+  display: flex;
+  justify-content: center;
+  font-family: avenue;
+  font-size: 21vw;
+  margin-top: -0.28em;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+#updateF {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  margin: 1em;
+}
+#username{
+    text-transform: uppercase;
+    margin: 0;
+}
+#updateF div:not(#tatuadores, #sub) {
+  padding: 0.25em;
+  border: 2px solid #eef1ef;
+  border-top: none;
+}
+#updateF input {
+    height: auto;
+    width: 100%;
+    background-color: #1c2321;
+    color: #eef1ef;
+    border: none;
+    text-align: right;
+    font-family: editor;
+    font-size: 95%;
+  }
+
+  #updateF input::placeholder {
+    text-align: right;
+    color: #eef1ef;
+    padding: 0.1em;
+  }
+  #subU{
+     border: none !important;  
+  }
+  #subU input {
+    font-family: syne;
+    font-size: 0.5em;
+ 
+  }

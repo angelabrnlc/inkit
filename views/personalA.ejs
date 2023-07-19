@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="stylesheet"
+      href="../public/stylesheets/style.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../public/stylesheets/personalA.css"
+      type="text/css"
+    />
+    <title>INKit · AreA PersOnal</title>
+  </head>
+  <body id="areaP">
+    <h1>
+      ARE<span class="editor" id="aspan">A</span> &nbsp;PERS<span class="editor"
+        >O</span
+      >NAL
+    </h1>
+    <section id="intro">
+      <div id="fotoPerfil">
+        <% if (user.user_img!=null){%>
+        <img src="<%-user[0].user_img %>" alt="imagen de Perfil" />
+        <%} else{ %>
+        <img
+          src="../public/images/pexels-yogendra-singh-4117793.jpg"
+          alt="imagen por defecto"
+        />
+        <% }%>
+        <div id="upload">
+          <form action="/post" method="post" enctype="multipart/form-data">
+            <input type="file" name="img" id="img" accept="image/*" />
+            <input type="submit" value="SUBE UNA FOTO" />
+          </form>
+        </div>
+      </div>
+      <div id="info">
+        <h2><%- user_name %></h2>
+        <% if(user_location != null){%>
+        <h4 id="local" class="editor"><%- user_location %></h4>
+        <%}%>
+        <div id="ig_style">
+          <% if(user_ig != null){%>
+          <p><%- user_ig %></p>
+          <%}%> <% if(user_style != null){%>
+          <p><%- user_style %></p>
+          <%}%>
+        </div>
+        <a class="editor" id="reseñas" href="#reviews">
+          <h4>RESEÑAS</h4>
+          <img src="../public/images/flecha1.svg" alt="flecha"
+        /></a>
+        <a class="editor" id="update" href="/update">
+          <h4>CAMBIAR TUS DATOS</h4>
+          <img src="../public/images/flecha1.svg" alt="flecha"
+        /></a>
+      </div>
+    </section>
+
+    <section id="imgPerfil">
+      <% user.forEach(image => { %>
+      <img src="<%-image.user_img %>" alt="imagen tatuador" />
+      <% })%>
+    </section>
+
+    <section id="reviews">
+      <h2 class="editor">MIS RESEÑAS</h2>
+      <% if(reviews != ""){%> <% reviews.forEach(review =>{ %> <%
+      if(review.user_name === user_name) { %>
+      <div class="review">
+        <div class="revInfo">
+          <h3 class="tatuadores"><%-review.tattoo_ig%></h3>
+        </div>
+        <div class="stars">
+          <h5><%-review.user_stars%></h5>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-star-fill"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+            />
+          </svg>
+        </div>
+      </div>
+      <%}%> <%})%> <% } else {%>
+      <h6>No tienes ninguna reseña.</h6>
+      <%}%>
+      <h2 class="editor">GESTIONAR RESEÑAS</h2>
+      <div class="newReview">
+        <form action="/createReview" method="post">
+          <div>
+            <input type="text" name="tattoo_ig" placeholder="@tatuador" />
+            <input type="number" name="user_stars" placeholder="0" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-star-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+              />
+            </svg>
+          </div>
+          <input type="submit" value="CREAR" />
+        </form>
+      </div>
+      <div class="newReview">
+        <form action="/deleteReview" method="post">
+          <div>
+            <input type="text" name="tattoo_ig" placeholder="@tatuador" />
+          </div>
+          <input type="submit" value="BORRAR" />
+        </form>
+      </div>
+      <div class="newReview">
+        <form action="/updateReview" method="post">
+          <div>
+            <input type="text" name="tattoo_ig" placeholder="@tatuador" />
+            <input type="number" name="user_stars" placeholder="0" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-star-fill"
+              viewBox="0 0 16 16"
+            >
+              <path
+                d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"
+              />
+            </svg>
+          </div>
+          <input type="submit" value="MODIFICAR" />
+        </form>
+      </div>
+    </section>
+
+    <footer>
+      <div id="footer">
+        <div id="navF">
+          <div id="menu">
+            <a href="/estilos">ESTILOS</a>
+            <a href="/tatuadores">TATUADORES</a>
+            <a href="/ubicaciones">UBICACIONES</a>
+          </div>
+          <div>
+            <a href="/nosotros">NOSOTROS</a>
+          </div>
+          <div>
+            <a href="/logout">CERRAR SESIÓN</a>
+          </div>
+          <div id="logout">
+            <form action="/deleteUser" method="post">
+              <input id="baja" type="submit" value="DATE DE BAJA" />
+            </form>
+          </div>
+        </div>
+        <div id="login">
+          <form action="/login" method="post" enctype="multipart/form-data">
+            <input type="email" name="user_mail" placeholder="EMAIL" />
+            <input
+              type="password"
+              name="user_password"
+              placeholder="CONTRASEÑA"
+              id="password"
+            />
+            <input type="submit" value="ENTRA" />
+          </form>
+        </div>
+      </div>
+      <div id="imgF">
+        <img src="../public/images/2023.png" alt="©2023" />
+        <a href="/"> <img src="../public/images/inkIt.png" alt="logo" /></a>
+      </div>
+    </footer>
+  </body>
+</html>

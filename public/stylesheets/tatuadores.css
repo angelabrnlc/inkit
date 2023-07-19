@@ -1,0 +1,53 @@
+nav {
+  background-color: #1c2321;
+}
+.tituloSect h1 {
+  display: flex;
+  justify-content: center;
+  font-family: avenue;
+  font-size: 16vw;
+  margin-top: 0.3em;
+  overflow: hidden;
+}
+#titUb h1 {
+  font-size: 13vw;
+}
+section.users {
+  display: grid;
+  grid-template-columns: 30vw 30vw 30vw;
+  margin: 1em;
+  border: 1px solid #eef1ef;
+  width: fit-content;
+}
+.tatuador {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #eef1ef;
+  
+  justify-content: flex-start;
+}
+
+.tatuador img {
+  width: 29.75vw;
+  height: 30vw;
+  border: 1px solid #eef1ef;
+  border-bottom: 2px solid #eef1ef;
+}
+.infoTattoo {
+  padding: 0.5em;
+}
+
+h3,
+p {
+  margin: 0;
+  text-align: right;
+  text-transform: uppercase;
+}
+h3 {
+  font-family: avenue;
+  font-weight: 400;
+}
+
+.tatuador p {
+  font-size: 0.5em;
+}

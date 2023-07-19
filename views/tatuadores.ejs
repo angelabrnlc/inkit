@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>INKit · Tatuad0res</title>
+    <link
+      rel="stylesheet"
+      href="../public/stylesheets/style.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="../public/stylesheets/tatuadores.css"
+      type="text/css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a id="logo" href="/">
+          <img src="../public/images/inkIt.png" alt="logo" />
+        </a>
+        <div id="menuN">
+          <a href="/estilos">ESTILOS</a>
+          <a href="/tatuadores">TATUADORES</a>
+          <a href="/ubicaciones">UBICACIONES</a>
+        </div>
+        <div>
+          <a href="/nosotros">NOSOTROS</a>
+        </div>
+        <% if(session.user_name){%>
+        <div>
+          <a href="/personalA">ÁREA PERSONAL</a>
+        </div>
+        <% } else {%>
+        <div>
+          <a href="#login">ENTRA</a>
+        </div>
+        <% } %>
+      </nav>
+    </header>
+
+    <section class="tituloSect">
+      <h1>TATUAD<span class="editor">O</span>RES</h1>
+    </section>
+
+    <section class="users">
+      <% data.forEach(tatuador => { %> 
+        <% if (tatuador.user_ig != null && tatuador.user_ig != "") { %>
+      <div class="tatuador">
+        <% let firstImage = null; %> 
+        <% image.forEach(images => { %>
+           <% if (tatuador.user_name === images.user_name && firstImage === null) { %> 
+            <% firstImage = images.user_img; %> 
+            <% } %>
+             <% }) %> 
+             <% if (firstImage) {  %>
+        <img src="<%- firstImage %>" class="imgTattoo" alt="imagen tatuador" />
+        <% } %>
+        <div class="infoTattoo">
+          <h3><%-tatuador.user_ig %></h3>
+          <p class="editor"><%-tatuador.user_location%></p>
+        </div>
+      </div>
+      <% }%> <% })%>
+    </section>
+
+    <footer>
+      <div id="footer">
+        <div id="navF">
+          <div id="menu">
+            <a href="/estilos">ESTILOS</a>
+            <a href="/tatuadores">TATUADORES</a>
+            <a href="/ubicaciones">UBICACIONES</a>
+          </div>
+          <div>
+            <a href="/nosotros">NOSOTROS</a>
+          </div>
+          <% if(!session.user_name){%>
+          <div>
+            <a href="/register">REGÍSTRATE</a>
+          </div>
+          <% } else {%>
+          <div>
+            <a href="/personalA">ÁREA PERSONAL</a>
+          </div>
+          <div>
+            <a href="/logout">CERRAR SESIÓN</a>
+          </div>
+          <% }%>
+        </div>
+        <div id="login">
+          <form action="/login" method="post">
+            <input type="email" name="user_mail" placeholder="EMAIL" />
+            <input
+              type="password"
+              name="user_password"
+              placeholder="CONTRASEÑA"
+              id="password"
+            />
+            <input type="submit" value="ENTRA" />
+          </form>
+        </div>
+      </div>
+      <div id="imgF">
+        <img src="../public/images/2023.png" alt="©2023" />
+        <a href="/"> <img src="../public/images/inkIt.png" alt="logo" /></a>
+      </div>
+    </footer>
+  </body>
+</html>

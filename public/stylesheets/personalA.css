@@ -1,0 +1,193 @@
+#areaP h1 {
+  display: flex;
+  justify-content: center;
+  font-family: avenue;
+  font-size: 13vw;
+  margin-top: -3.75vw;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+#aspan {
+  line-height: 1.25em;
+  padding-left: 0.1em;
+}
+#intro {
+  display: flex;
+
+}
+
+#intro h2 {
+  font-size: 2.5em;
+  margin-bottom: 0;
+}
+#intro h4 {
+  margin: 0;
+}
+#intro p {
+  margin: 0;
+  text-transform: lowercase;
+  padding: 0.5em 0 0.5em;
+  font-size: 0.75em;
+}
+#fotoPerfil {
+  display: flex;
+  flex-direction: column;
+  border: 2px solid #eef1ef;
+  margin: 1em 2em 0 3em;
+  font-size: 0.5em;
+  width: 25vw;
+}
+#fotoPerfil img {
+  border-bottom: 1px solid #eef1ef;
+  width: 25vw;
+  height: 25vw;
+}
+#info {
+  display: flex;
+  flex-direction: column;
+  text-transform: uppercase;
+  justify-content: flex-end;
+}
+#ig_style {
+  display: flex;
+  justify-content: space-between;
+}
+
+#reseñas,
+#update {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0.35em;
+  border: 2px solid #eef1ef;
+  align-items: center;
+  width: 55vw;
+}
+
+#reseñas h4,
+#update h4 {
+  font-weight: lighter;
+}
+#reseñas img,
+#update img {
+  width: 1em;
+  height: auto;
+  margin-left: 0.75em;
+}
+#update {
+  border-top: none;
+}
+#update:hover,
+#reseñas:hover {
+  background-color: #eef1ef;
+  color: #1c2321;
+}
+
+#upload form {
+  padding: 1em;
+  display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+  border-top: 2px solid #eef1ef;
+}
+#upload input {
+  background-color: #1c2321;
+  border: none;
+  color: #eef1ef;
+  font-family: syne;
+}
+#upload input[type="submit"] {
+  font-size: 1.25em;
+  cursor: pointer;
+}
+#upload input[type="submit"]:hover {
+  animation: spin 2s;
+}
+
+section {
+  margin-bottom: 2em;
+}
+
+#imgPerfil {
+  margin: 0 2em;
+  display: flex;
+  justify-content: center;
+}
+#imgPerfil img {
+  width: 30vw;
+  height: 30vw;
+  border: 2px solid #eef1ef;
+}
+
+#reviews {
+  margin: 0 1em 2em;
+}
+
+.review {
+  display: flex;
+  margin: 0.5em 0;
+  font-size: 0.5em;
+  border: 2px solid #eef1ef;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1em;
+}
+.review h3 {
+  margin: 0;
+}
+.newReview form {
+  display: flex;
+  margin: 0.5em 0;
+  font-size: 0.5em;
+  border: 2px solid #eef1ef;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 1em;
+}
+.newReview input {
+  background-color: #1c2321;
+  color: #eef1ef;
+  border: none;
+  font-family: syne;
+  font-size: 1.25em;
+}
+
+.newReview input::placeholder {
+  color: #eef1ef;
+}
+.newReview input[type="number"] {
+  text-align: right;
+}
+input[type="submit"]:hover {
+  animation: spin 2s;
+}
+.newReview input[type="submit"] {
+  font-family: editor;
+}
+.revInfo {
+  display: flex;
+  flex-direction: column;
+}
+.stars {
+  display: flex;
+  align-items: center;
+  font-size: 1.5em;
+}
+
+.stars h5 {
+  margin: 0;
+  padding-right: 0.15em;
+}
+#stars svg {
+  color: #eef1ef;
+  size: 1em;
+}
+#logout {
+  padding: 0 0.5em !important;
+
+}
+footer input[type="submit"] {
+  background-color: #1c2321;
+  color: #eef1ef;
+  font-family: syne;
+  border: none;
+}

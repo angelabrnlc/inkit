@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="../public/stylesheets/style.css"
+      type="text/css"
+    />
+    <title>INKit · RegristrO</title>
+  </head>
+  <body id="registro">
+    <h1>REGISTR<span class="editor">O</span></h1>
+    <form id="registroF" action="/newUser" method="post">
+      <div id="firstdiv">
+        <input type="text" name="user_name" placeholder="NOMBRE" id="regName" />
+      </div>
+      <div>
+        <input type="email" name="user_mail" placeholder="EMAIL" id="regMail" />
+      </div>
+      <div>
+        <input
+          type="password"
+          name="user_password"
+          placeholder="CONTRASEÑA"
+          id="regPass"
+        />
+      </div>
+      <div id="question">
+        <label>¿TATÚAS?</label>
+        <label for="si"></label>
+        <input class="form-check-input" type="radio" name="tatu" value="si" />
+        <label for="tatu">SI</label>
+        <label for="tatu"></label>
+        <input
+          class="form-check-input"
+          type="radio"
+          name="tatu"
+          value="no"
+          checked
+        />
+        <label for="no">NO</label>
+      </div>
+      <div id="tatuadores">
+        <div>
+          <input
+            type="text"
+            name="user_location"
+            placeholder="UBICACIÓN"
+            id="regLoc"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            name="user_ig"
+            placeholder="INSTAGRAM"
+            id="regIg"
+          />
+        </div>
+      </div><div>
+        <input
+          type="text"
+          name="user_style"
+          placeholder="ESTILO PRINCIPAL"
+        />
+      </div>
+    </div>
+      <div id="sub">
+        <input type="submit" value="ENTRA" />
+      </div>
+    </form>
+
+    <footer>
+      <div id="navF">
+        <div id="menu">
+          <a href="estilos.ejs">ESTILOS</a>
+          <a href="tatuadores.ejs">TATUADORES</a>
+          <a href="ubicaciones.ejs">UBICACIONES</a>
+        </div>
+        <div>
+          <a href="/nosotros">NOSOTROS</a>
+        </div>
+      
+      </div>
+      <div id="imgF">
+        <img src="../public/images/2023.png" alt="©2023" />
+        <a href="/"> <img src="../public/images/inkIt.png" alt="logo" /></a>
+      </div>
+    </footer>
+  </body>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+    crossorigin="anonymous"
+  ></script>
+</html>
