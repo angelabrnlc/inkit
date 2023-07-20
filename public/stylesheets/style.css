@@ -20,7 +20,7 @@ nav {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0.5em;
+  padding: 0.75em;
   background-color: #1c2321;
   position: absolute;
   z-index: 10;
@@ -36,13 +36,18 @@ nav {
 a {
   color: #eef1ef;
   text-decoration: none;
-  font-size: 0.4em;
+  font-size: 0.5em;
 }
 #menuN {
   display: flex;
   flex-direction: column;
 }
-nav a:not(#logo):hover {
+
+.topnav .icon {
+  display: none;
+}
+
+nav a:not(#logo, #hover):hover {
   animation: spin 1.5s;
 }
 nav div:not(#menuN) {
@@ -109,7 +114,7 @@ nav div:not(#menuN) {
 }
 #styles div h3 {
   padding: 1em 1em 2em;
-  font-size: 1.75em;
+  font-size: 2.25vw;
   font-weight: 400;
   margin: 0;
 }
@@ -120,7 +125,8 @@ nav div:not(#menuN) {
   height: max-content;
   align-items: flex-start;
 }
-.noBorder:hover, .locationDiv:hover {
+.noBorder:hover,
+.locationDiv:hover {
   background-color: #eef1ef;
   color: #1c2321;
 }
@@ -137,20 +143,20 @@ nav div:not(#menuN) {
 }
 .locationDiv {
   border: 2px solid #eef1ef;
-  font-size: 2em;  margin-top: 0.25em;
+  font-size: 2em;
+  margin-top: 0.25em;
 }
 .locationDiv a {
   display: flex;
   justify-content: flex-end;
-
 }
 #location .flecha {
-  margin: 0 1em 0   1em;
+  margin: 0 1em 0 1em;
   width: 2em !important;
 }
-.locationDiv a:hover{
+.locationDiv a:hover {
   background-color: #eef1ef;
-  color: #1c2321 ;
+  color: #1c2321;
 }
 #registro {
   padding: 0;
@@ -161,7 +167,6 @@ nav div:not(#menuN) {
   display: flex;
   justify-content: center;
   font-family: avenue;
-  /* font-size: 5.55em; */
   font-size: 21vw;
   margin-top: -0.28em;
   margin-bottom: 0;
@@ -337,36 +342,150 @@ footer a {
   margin-top: 0.5em;
   margin-left: -0.1em;
 }
-#about{
+#about {
   margin: 4em 1.5em 4em;
   font-size: 0.75em;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
 }
-#about img{
+#about img {
   width: 30vw;
   height: 30vw;
-margin-right: 1em;
-border: 2px solid #eef1ef;
+  margin-right: 1em;
+  border: 2px solid #eef1ef;
 }
-#about article{
+#about article {
   display: flex;
   align-items: center;
   margin-bottom: 1em;
-  
 }
-#about a{
+#about a {
   border: 2px solid #eef1ef;
   padding: 0.5em;
   font-size: 2em;
 }
-#about a:hover{
+#about a:hover {
   background-color: #eef1ef;
   color: #1c2321;
 }
 
-input[type="submit"]:hover{
-  animation: spin 1.5s;
+input[type="submit"]:hover {
   cursor: pointer;
+}
+@media screen and (max-width: 768px) {
+  .topnav a:not(#logo, .icon) {
+    display: none;
+  }
+  .topnav a.icon {
+    float: right;
+    display: block;
+  }
+
+  /* a.icon:hover {
+  } */
+  .topnav.responsive {
+    position: relative;
+    flex-direction: column;
+  }
+  .topnav.responsive div:not(#menuN) {
+    padding-left: 0;
+  }
+  .topnav.responsive a.icon {
+    position: absolute;
+    right: 1em;
+    top: 1em;
+  }
+  .topnav.responsive a,
+  .topnav.responsive div {
+    float: none;
+    display: block !important;
+    text-align: left;
+  }
+
+  #textIntro {
+    top: 4em;
+  }
+  #styles {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0.5em;
+  }
+  #styles h2 {
+    margin: 0;
+  }
+  #styles article {
+    display: flex;
+    flex-direction: column;
+    margin-top: 1em;
+    text-align: center;
+    align-self: center;
+  }
+  #styles div img {
+    width: 70vw;
+    height: 70vw;
+  }
+  #styles div h3 {
+    font-size: 3vw;
+  }
+  #styles div h3 {
+    font-size: 1.5em;
+    padding: 0.75em;
+  }
+  .flecha {
+    margin: 0.4em !important;
+  }
+  .noBorder {
+    align-items: center;
+    padding: 0.4em;
+  }
+  #footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  #navF {
+    display: flex;
+    flex-direction: column;
+    border-right: none;
+    padding-bottom: 1em;
+  }
+  #navF div {
+    border-bottom: 2px solid #eef1ef;
+    padding-bottom: 0.2em;
+    border-right: none !important;
+  }
+  #imgF img {
+    width: 1.5em;
+  }
+  #imgF a img {
+    width: 70vw;
+  }
+  #location {
+    margin: 0.5em;
+  }
+  #location article {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .locationDiv {
+    width: 80vw;
+    text-align: center;
+  }
+  .locationDiv h3 {
+    font-size: 7vw;
+  }
+  #login {
+    display: flex;
+    justify-content: flex-end;
+  }
+  #about article {
+    flex-direction: column;
+    font-size: 0.75em;
+  }
+  #about img {
+    width: 70vw;
+    height: 70vw;
+  }
 }

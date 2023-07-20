@@ -15,11 +15,16 @@
       href="../public/stylesheets/tatuadores.css"
       type="text/css"
     />
+     <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <script src="../public/javascripts/script.js"></script>
   </head>
   <body>
     <header>
-      <nav>
-        <a id="logo" href="/">
+      <nav class="topnav" id="myTopnav">
+        <a id="logo" class="active" href="/">
           <img src="../public/images/inkIt.png" alt="logo" />
         </a>
         <div id="menuN">
@@ -39,6 +44,9 @@
           <a href="#login">ENTRA</a>
         </div>
         <% } %>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()" id="hover">
+          <i class="fa fa-bars"></i>
+        </a>
       </nav>
     </header>
 

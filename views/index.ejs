@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -10,11 +10,17 @@
       href="../public/stylesheets/style.css"
       type="text/css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <script src="../public/javascripts/script.js"></script>
   </head>
+<!-- En el head de los archivos ejs usamos etiquetas necesarias para el uso de caracteres propios del idioma de la web(español), para poder adaptar el responsive a la ventana del navegador, el título que llevará la página y enlazamos los archivos css y js vainilla   -->
   <body>
     <header>
-      <nav>
-        <a id="logo" href="/">
+      <nav class="topnav" id="myTopnav">
+        <a id="logo" class="active" href="/">
           <img src="../public/images/inkIt.png" alt="logo" />
         </a>
         <div id="menuN">
@@ -34,8 +40,12 @@
           <a href="#login">ENTRA</a>
         </div>
         <% } %>
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()" id="hover">
+          <i class="fa fa-bars"></i>
+        </a>
       </nav>
     </header>
+    <!-- En el header recogeremos la barra de navegación de la página, válida para el resto de archivos ejs. Mediante clases y el evento onclick crearemos el responsive en forma de hamburguesa. También solicitaremos al servidor la session para mostrar distintos botones dependiendo de si el usuario esta logeado o no. -->
     <section id="intro">
       <article id="imgIntro">
         <img src="../public/images/collage2.png" alt="collage" />
