@@ -53,7 +53,7 @@
     <section class="tituloSect" id="titSt">
       <h1>ESTIL<span class="editor">O</span>S</h1>
     </section>
-
+<!-- Le damos título a la vista mediante un encabezado -->
     <section class="users">
       <% data.forEach(tatuador => { %> 
         <% if (tatuador.user_style != null && tatuador.user_style != "" && tatuador.user_ig != "" && tatuador.user_ig != null) { %>
@@ -74,7 +74,7 @@
       </div>
       <% }%> <% })%>
     </section>
-
+<!-- Esta seccion dibuja mediante un bucle forEach cada tatuador solo si este tiene registrado su estilo y su instagram de forma que te ordea (gracias a la query) los usuarios por estilos. -->
     <footer>
       <div id="footer">
         <div id="navF">

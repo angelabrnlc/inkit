@@ -7,6 +7,7 @@
   margin-bottom: 0;
   overflow: hidden;
 }
+/* Al igual que en "registro" adecuamos el estilo del encabezado */
 #updateF {
   display: flex;
   flex-direction: column;
@@ -46,3 +47,4 @@
     font-size: 0.5em;
  
   }
+  /* También damos estilo al formulario mediante flexbox y cambiamos los estilos por defecto de los input  */

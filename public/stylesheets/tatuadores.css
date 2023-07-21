@@ -14,6 +14,7 @@ nav {
   margin-top: 0.4em;
   font-size: 14vw;
 }
+/* Al igual que en otras vistas como registro construimos un encabezado grande y que desborde del ancho de la pantalla pero esta vez manteniendo la navbar */
 section.users {
   display: grid;
   grid-template-columns: 30vw 30vw 30vw;
@@ -52,6 +53,8 @@ h3 {
 .tatuador p {
   font-size: 0.5em;
 }
+/* Para los estilos de los usuarios construimos un gride de 3 columnas que se autorellene gracias al ejs. Damos un tamaño fijo al ancho de imagenes y un aspecto a aquella información del usuario (h3 y p) */
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   nav {
     position: relative;
@@ -90,3 +93,4 @@ h3 {
     margin: 0;
   }
 }
+/* Aqui si hacemos distinción entre vista móvil y vista tablet ya que modificamos el grid para que sea de una y dos columnas respectivamente. Además de modificar tamaños de fuente y márgenes. */

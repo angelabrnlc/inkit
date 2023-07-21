@@ -18,68 +18,77 @@
     />
     <title>INKit · RegristrO</title>
   </head>
+  <!-- El head al igual que el footer y el header son iguales en todas las vistas por lo que solo serán comentados en "index.ejs" -->
   <body id="registro">
-    <h1>REGISTR<span class="editor">O</span></h1>
-    <form id="registroF" action="/newUser" method="post">
-      <div id="firstdiv">
-        <input type="text" name="user_name" placeholder="NOMBRE" id="regName" />
-      </div>
-      <div>
-        <input type="email" name="user_mail" placeholder="EMAIL" id="regMail" />
-      </div>
-      <div>
-        <input
-          type="password"
-          name="user_password"
-          placeholder="CONTRASEÑA"
-          id="regPass"
-        />
-      </div>
-      <div id="question">
-        <label>¿TATÚAS?</label>
-        <label for="si"></label>
-        <input class="form-check-input" type="radio" name="tatu" value="si" />
-        <label for="tatu">SI</label>
-        <label for="tatu"></label>
-        <input
-          class="form-check-input"
-          type="radio"
-          name="tatu"
-          value="no"
-          checked
-        />
-        <label for="no">NO</label>
-      </div>
-      <div id="tatuadores">
-        <div>
+    <section>
+      <h1>REGISTR<span class="editor">O</span></h1>
+      <form id="registroF" action="/newUser" method="post">
+        <div id="firstdiv">
           <input
             type="text"
-            name="user_location"
-            placeholder="UBICACIÓN"
-            id="regLoc"
+            name="user_name"
+            placeholder="NOMBRE"
+            id="regName"
           />
         </div>
         <div>
           <input
-            type="text"
-            name="user_ig"
-            placeholder="INSTAGRAM"
-            id="regIg"
+            type="email"
+            name="user_mail"
+            placeholder="EMAIL"
+            id="regMail"
           />
         </div>
-      </div><div>
-        <input
-          type="text"
-          name="user_style"
-          placeholder="ESTILO PRINCIPAL"
-        />
-      </div>
-    </div>
-      <div id="sub">
-        <input type="submit" value="ENTRA" />
-      </div>
-    </form>
-
+        <div>
+          <input
+            type="password"
+            name="user_password"
+            placeholder="CONTRASEÑA"
+            id="regPass"
+          />
+        </div>
+        <div id="question">
+          <label>¿TATÚAS?</label>
+          <label for="si"></label>
+          <input class="form-check-input" type="radio" name="tatu" value="si" />
+          <label for="tatu">SI</label>
+          <label for="tatu"></label>
+          <input
+            class="form-check-input"
+            type="radio"
+            name="tatu"
+            value="no"
+            checked
+          />
+          <label for="no">NO</label>
+        </div>
+        <div id="tatuadores">
+          <div>
+            <input
+              type="text"
+              name="user_location"
+              placeholder="UBICACIÓN"
+              id="regLoc"
+            />
+          </div>
+          <div>
+            <input
+              type="text"
+              name="user_ig"
+              placeholder="INSTAGRAM"
+              id="regIg"
+            />
+          </div>
+        </div>
+        <div>
+          <input type="text" name="user_style" placeholder="ESTILO PRINCIPAL" />
+        </div>
+        <div id="sub">
+          <input type="submit" value="ENTRA" />
+        </div>
+      </form>
+    </section>
+ <!-- Este formulario recoge los datos para hacer el registro del usuario en la base de datos mediante metodo post y mediante la ruta "/newUser" -->
     <footer>
       <div id="navF">
         <div id="menu">
@@ -90,7 +99,6 @@
         <div>
           <a href="/nosotros">NOSOTROS</a>
         </div>
-      
       </div>
       <div id="imgF">
         <img src="../public/images/2023.png" alt="©2023" />

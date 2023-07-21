@@ -1,3 +1,4 @@
+/* Este es el archivo css principal donde encontramos la mayoría de estilos de nuestra web */
 @font-face {
   font-family: avenue;
   src: url(../fonts/Avenue\ X.otf);
@@ -10,12 +11,14 @@
   font-family: syne;
   src: url(../fonts/Syne-Regular.ttf);
 }
+/* Estas primeras reglas importan las 3 fuentes principales que usaremos en el proyecto */
 body {
   background-color: #1c2321;
   color: #eef1ef;
   font-family: syne;
   font-size: 2.2em;
 }
+/* Damos por defecto color de fondo y a la fuente empleada en el cuerpo de la página y definimos el estilo y tamaño de la misma */
 nav {
   display: flex;
   flex-direction: row;
@@ -56,14 +59,14 @@ nav div:not(#menuN) {
   padding-bottom: 0.2em;
   height: fit-content;
 }
-
+/* La barra de navegación "nav" ocupará una posición absoluta en nuestra vista encabezando nuestra web. Mediante flexbox distrubuimos los enlaces respectivos de la navbar y definimos unas reglas para la disposición de la misma en pantallas superiores a 768px. */
 .editor {
   font-family: editor;
   font-size: 95%;
   font-weight: 100;
   line-height: 1.2em;
 }
-
+/* Esta regla cambia la fuente de todos los elementos que presenten dicha clase para poder modificar mas fácilmente los títulos de secciones por ejemplo */
 #intro {
   display: flex;
   align-items: flex-end;
@@ -93,6 +96,7 @@ nav div:not(#menuN) {
 #textIntro h1 {
   margin: 0;
 }
+/* La sección #intro estará divida en 2 articulos, uno con imagen y el otro solo texto que se superpone en la primera imagen al modificar su index z  */
 #styles {
   margin: -5em 1em 1em;
 }
@@ -136,7 +140,7 @@ nav div:not(#menuN) {
   margin-right: 1.5em;
   margin-top: 1.5em;
 }
-
+/* La sección estilos presenta 3 "Cards" que se distribuyen en el espacio mediante flexbox, en fila para las 3 cards y en columna dentro de las tarjetas. Aplicamos un hover en los elementos div que contienen los enlaces para crear el "aspecto botón" */
 #location {
   margin: 2em 1em;
   font-family: avenue;
@@ -158,6 +162,101 @@ nav div:not(#menuN) {
   background-color: #eef1ef;
   color: #1c2321;
 }
+/* De la mismma manera con la siguiente sección distribuimos los div contenedores de enlaces mediante flexbox y les aplicamos un hover para darles aspecto "clickable" */
+@keyframes spin {
+  0% {
+  }
+  50% {
+    opacity: 0.2;
+    transform-style: preserve-3d;
+    transform-origin: bottom;
+    transform: translate(0%, 0%) rotateX(90deg) scaleY(1);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+/* Mediante keyframes definimos una animación que mueva el texto para crear un hover en otros enlaces */
+footer {
+  border-top: 2px solid #eef1ef;
+}
+footer a {
+  color: #eef1ef;
+  text-decoration: none;
+  font-size: 0.4em;
+}
+#footer {
+  display: flex;
+  justify-content: space-between;
+}
+/* En el footer definimos 2 zonas, una donde repetiremos el menú de navegación y otra donde ubicaremos el login */
+#navF a:hover {
+  animation: spin 2s;
+}
+#menu {
+  display: flex;
+  flex-direction: column;
+  border-right: 2px solid #eef1ef;
+  padding-bottom: 0.2em;
+  height: fit-content;
+}
+
+#navF {
+  display: flex;
+  flex-direction: row;
+  padding-left: 0.5em;
+  justify-content: flex-start;
+  width: 60%;
+}
+#navF div {
+  padding-right: 0.5em;
+  padding-top: 0.5em;
+
+  display: flex;
+}
+#navF div:not(#menu) {
+  padding-left: 0.5em;
+  padding-bottom: 0.2em;
+  border-right: 2px solid #eef1ef;
+  height: fit-content;
+}
+#login form {
+  display: flex;
+  flex-direction: column;
+  border: none;
+  width: fit-content;
+  padding: 0.5em;
+  width: 9em;
+}
+#login input {
+  background-color: #1c2321;
+  color: #eef1ef;
+  text-align: right;
+  padding: 1em;
+  border: none;
+  border-bottom: 2px solid #eef1ef;
+}
+#login input::placeholder {
+  color: #eef1ef;
+}
+#login input[type="submit"] {
+  border: none;
+  text-align: right;
+  cursor: pointer;
+}
+#login input[type="submit"]:hover {
+  animation: spin 1.5s;
+}
+/* Eliminamos las propiedades que traen los input por defecto y las adecuamos al diseño de nuestra web */
+#imgF {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-top: 0.5em;
+  margin-left: -0.1em;
+}
+/* Las imagenes logo y copyright se separan y distribuyen de nuevo gracias a un flexbox */
+
 #registro {
   padding: 0;
   margin: 0;
@@ -172,6 +271,7 @@ nav div:not(#menuN) {
   margin-bottom: 0;
   overflow: hidden;
 }
+/* En la vista "registro" constituimos un encabezado grande y llamativo que ocupe casi todo el ancho del navegador y que incluso se introduzca un poco bajo la barra de busqueda del navegador */
 #registroF {
   display: flex;
   flex-direction: column;
@@ -232,10 +332,12 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
   box-shadow: inset 0 0 20px 20px #1c2321;
 }
+/* Asi eliminamos el estilo por defecto del inputo durante el autocompletado */
 .form-check-input:checked[type="radio"] {
   --bs-form-check-bg-image: url(../images/cruz.svg);
   box-shadow: none;
 }
+/* Esto nos permite cambiar el aspecto del input radio */
 #registroF input::placeholder {
   text-align: right;
   color: #eef1ef;
@@ -252,102 +354,14 @@ input:-webkit-autofill:active {
 #subU input:hover {
   animation: spin 2s;
 }
-@keyframes spin {
-  0% {
-  }
-  50% {
-    opacity: 0.2;
-    transform-style: preserve-3d;
-    transform-origin: bottom;
-    transform: translate(0%, 0%) rotateX(90deg) scaleY(1);
-  }
-  100% {
-    opacity: 1;
-  }
-}
-
-footer {
-  border-top: 2px solid #eef1ef;
-}
-footer a {
-  color: #eef1ef;
-  text-decoration: none;
-  font-size: 0.4em;
-}
-#footer {
-  display: flex;
-  justify-content: space-between;
-}
-#navF a:hover {
-  animation: spin 2s;
-}
-#menu {
-  display: flex;
-  flex-direction: column;
-  border-right: 2px solid #eef1ef;
-  padding-bottom: 0.2em;
-  height: fit-content;
-}
-
-#navF {
-  display: flex;
-  flex-direction: row;
-  padding-left: 0.5em;
-  justify-content: flex-start;
-  width: 60%;
-}
-#navF div {
-  padding-right: 0.5em;
-  padding-top: 0.5em;
-
-  display: flex;
-}
-#navF div:not(#menu) {
-  padding-left: 0.5em;
-  padding-bottom: 0.2em;
-  border-right: 2px solid #eef1ef;
-  height: fit-content;
-}
-#login form {
-  display: flex;
-  flex-direction: column;
-  border: none;
-  width: fit-content;
-  padding: 0.5em;
-  width: 9em;
-}
-#login input {
-  background-color: #1c2321;
-  color: #eef1ef;
-  text-align: right;
-  padding: 1em;
-  border: none;
-  border-bottom: 2px solid #eef1ef;
-}
-#login input::placeholder {
-  color: #eef1ef;
-}
-#login input[type="submit"] {
-  border: none;
-  text-align: right;
-  cursor: pointer;
-}
-#login input[type="submit"]:hover {
-  animation: spin 1.5s;
-}
-#imgF {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-top: 0.5em;
-  margin-left: -0.1em;
-}
+/* Al igual que en el login damos forma a los input del formulario eliminando a su vez los estilos definidos por defecto */
 #about {
-  margin: 4em 1.5em 4em;
+  margin: 5em 1.5em 4em;
   font-size: 0.75em;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  font-family: editor;
 }
 #about img {
   width: 30vw;
@@ -369,11 +383,16 @@ footer a {
   background-color: #eef1ef;
   color: #1c2321;
 }
-
+#about span {
+  font-family: syne;
+}
 input[type="submit"]:hover {
   cursor: pointer;
 }
+/* En la vista "nosotros" sencillamente componemos la distribución del texto con respecto a la foto mediante flexbox y modificamos el aspecto de las fuentes */
+
 @media screen and (max-width: 768px) {
+  /* Mediante una media query cambiamos el aspecto de la vista para pantallas inferiores a 768px  */
   .topnav a:not(#logo, .icon) {
     display: none;
   }
@@ -382,8 +401,6 @@ input[type="submit"]:hover {
     display: block;
   }
 
-  /* a.icon:hover {
-  } */
   .topnav.responsive {
     position: relative;
     flex-direction: column;
@@ -402,7 +419,7 @@ input[type="submit"]:hover {
     display: block !important;
     text-align: left;
   }
-
+/* Estos selectores nos permiten cambiar el aspecto de la barra de navegación en móviles dandole el famoso aspecto de "menú hamburguesa" */
   #textIntro {
     top: 4em;
   }
@@ -488,4 +505,5 @@ input[type="submit"]:hover {
     width: 70vw;
     height: 70vw;
   }
+  /* La mayoría de modificaciones son cambiar el sentido del flex para que se distribuyan los elementos en columna ya que es la manera mas sencilla de redistribuir los elementos en una pantalla tan estrecha. Tambien variamos algunos tamaños de fuente o de ancho de imagenes y contenedores */
 }
