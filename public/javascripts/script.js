@@ -2,7 +2,7 @@
  La función alterna la clase en el elemento con el id "myTopnav" para que sea adapte de forma responsive al tamaño de la ventana del navegador
  */
 
-function myFunction() {
+function responsive() {
   var x = document.getElementById("myTopnav");
   if (x.className === "topnav") {
     x.className += " responsive";
