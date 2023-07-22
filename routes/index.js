@@ -94,9 +94,18 @@ router.post("/newUser", (req, res, next) => {
   let user_style = req.body.user_style;
   console.log(user_name);
   if (user_name && user_mail && user_password) {
-    query = `INSERT INTO users (user_name, user_mail, user_password, user_location, user_ig, user_style) VALUES ("${user_name}", "${user_mail}", "${user_password}", "${user_location}", "${user_ig}", "${user_style}")`;
-    database.query(query, (error) => {
-      if (error) {
+    query10 = `SELECT user_name FROM users WHERE user_name="${user_name}";`;
+    database.query(query10, (error, data) => {
+      if (data > 0) {
+        res.send("Ese nombre de usuario ya ha sido registrado");
+      } else if (data == 0) {
+        query = `INSERT INTO users (user_name, user_mail, user_password, user_location, user_ig, user_style) VALUES ("${user_name}", "${user_mail}", "${user_password}", "${user_location}", "${user_ig}", "${user_style}")`;
+        database.query(query, (error) => {
+          if (error) {
+            throw error;
+          }
+        });
+      } else if (error) {
         throw error;
       }
     });
