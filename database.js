@@ -2,7 +2,7 @@
 const mysql = require("mysql");
 const database = mysql.createConnection({
   host: "db4free.net",
- database: "inkitsql",
+  database: "inkitsql",
   user: "angelasql",
   password: "proyectoSQL",
   port: "3306",
